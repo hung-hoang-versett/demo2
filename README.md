@@ -1,3 +1,6 @@
-# Awesome Links - part-1
+# Development
 
-This branch has the same starting point as [this article](https://prisma.io/blog/fullstack-nextjs-graphql-prisma-oklidw1rhw)
+1. yarn
+2. npx prisma db push
+3. npx prisma db seed
+4. yarn dev
