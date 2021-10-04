@@ -4,7 +4,7 @@ import { useUser } from "@auth0/nextjs-auth0";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import useSWR from "swr";
 import { fetcher } from "../utils/helper";
-
+import Link from "next/link";
 const Profile: NextPage = () => {
   const { user, error, isLoading }: any = useUser();
   useSWR("/api/profile", fetcher);
@@ -20,9 +20,17 @@ const Profile: NextPage = () => {
       </Head>
 
       <main>
-        <h1>
-          Welcome {user.name}! <a href="/api/auth/logout">Logout</a>
-        </h1>
+        <h1>Welcome {user.name}!</h1>
+
+        <Link href="/">
+          <a className="px-4 py-2 bg-blue-500 text-white rounded my-10">Home</a>
+        </Link>
+        <a
+          href="/api/auth/logout"
+          className="px-4 py-2 bg-blue-500 text-white rounded my-10"
+        >
+          Logout
+        </a>
       </main>
     </div>
   );
